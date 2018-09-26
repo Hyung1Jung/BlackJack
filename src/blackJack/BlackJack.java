@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
+import javax.swing.*;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -42,7 +43,7 @@ class BlackJack extends JFrame {
 		};
 		
 		JLabel Id = new JLabel("아이디 : ");
-		Id.setFont(new Font("Serif", Font.BOLD, 15));
+		Id.setFont(new Font("맑은고딕", Font.BOLD, 13));
 		JTextField tf = new JTextField(10);
 		background = new JPanel();
 
@@ -70,6 +71,8 @@ class BlackJack extends JFrame {
 
 		// 패널 추가
 		add(panel);
+		
+		
 
 	}
 

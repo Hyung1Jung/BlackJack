@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 201432031 정형일
+		System.out.println("정형일");
 		BlackJack blackJack = new BlackJack();
 		
 	}
