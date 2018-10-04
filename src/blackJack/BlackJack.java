@@ -94,8 +94,19 @@ class BlackJack extends JFrame implements ActionListener {
 
 	// 방, 유저, 채팅창 화면을 보여주기 위해 BlackJack2 클래스 생성
 	class BlackJack2 extends JFrame implements ActionListener {
-		// Button을 위한 변수 생성
-		private JButton button;
+		// Button을 위한 변수 생성 ( 방 목록 버튼)
+		private JButton button1;
+		private JButton button2;
+		private JButton button3;
+		private JButton button4;
+		private JButton button5;
+		private JButton button6;
+		
+		// Button을 위한 변수 생성 ( 유저 목록 버튼)
+		private JButton button7;
+		private JButton button8;
+		private JButton button9;
+		
 
 		// BlackJack2 메소드 생성
 		public BlackJack2() {
@@ -106,6 +117,7 @@ class BlackJack extends JFrame implements ActionListener {
 			setSize(1000, 650);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setVisible(true);
+			
 
 			// 2번쨰 화면의 배경화면 설정
 			icon = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\하늘.jpg");
@@ -117,16 +129,59 @@ class BlackJack extends JFrame implements ActionListener {
 					super.paintComponent(g);
 				}
 			};
-
+			panel.setLayout(null);
+			
+			button1 = new JButton("제목 : 즐겜해요~~");
+			button1.setBounds(0, 0, 370, 150);
+			panel.add(button1);
+			
+			button2 = new JButton("진 사람 커피 사기해요!!");
+			button2.setBounds(370, 0, 370, 150);
+			panel.add(button2);
+			
+			button3 = new JButton("방3");
+			button3.setBounds(0, 150, 370, 150);
+			panel.add(button3);
+			
+			button4 = new JButton("방4");
+			button4.setBounds(370, 150, 370, 150);
+			panel.add(button4);
+			
+			button5 = new JButton("방5");
+			button5.setBounds(0, 300, 370, 150);
+			panel.add(button5);
+			
+			button6 = new JButton("방6");
+			button6.setBounds(370, 300, 370, 150);
+			panel.add(button6);
+			
+			button7 = new JButton("유저목록");
+			button7.setBounds(740, 0, 240, 30);
+			button7.setBackground(Color.gray);
+			panel.add(button7);
+			
+			
+			
+			button8 = new JButton("정형일");
+			button8.setBounds(740, 30, 240, 30);
+			//button8.setBackground(Color.gray);
+			panel.add(button8);
+			
+			button9 = new JButton("김영곤");
+			button9.setBounds(740, 60, 240, 30);
+			//button9.setBackground(Color.gray);
+			panel.add(button9);
+			
+			
 			// 유저목록, 채팅창, 방목록 화면 분할을 위한 JPanel 객체 생성
 			JPanel userList = new JPanel();
 			JPanel catting = new JPanel();
-			//
-			setLayout(null);
+		
+			
 			// 패널 위치 지정
 			panel.setBounds(0, 0, 1000, 650);
 			// 패널 위치 지정 및 화면 배경색 지정
-			userList.setBounds(750, 0, 250, 450);
+			userList.setBounds(740, 0, 260, 450);
 			userList.setBackground(Color.WHITE);
 			// 패널 위치 지정 및 화면 배경색 지정
 			catting.setBounds(0, 450, 1000, 200);
@@ -137,6 +192,7 @@ class BlackJack extends JFrame implements ActionListener {
 			cp.add(userList);
 			cp.add(panel);
 
+			
 		}
 
 		@Override
