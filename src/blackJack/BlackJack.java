@@ -162,7 +162,7 @@ class BlackJack extends JFrame implements ActionListener {
 			
 			
 			
-			button8 = new JButton("정형일");
+			button8 = new JButton("유저목록");
 			button8.setBounds(740, 30, 240, 30);
 			//button8.setBackground(Color.gray);
 			panel.add(button8);
@@ -189,7 +189,6 @@ class BlackJack extends JFrame implements ActionListener {
 			// 정확한 위치를 잡기 위한 객체 생성
 			Container cp = getContentPane();
 			cp.add(catting);
-			cp.add(userList);
 			cp.add(panel);
 
 			
