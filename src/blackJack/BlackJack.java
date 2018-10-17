@@ -14,28 +14,28 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 
 class BlackJack extends JFrame implements ActionListener {
-	// ë°©, ìœ ì €, ì±„íŒ…ì°½ ëª©ë¡ì„ ë³´ì—¬ì£¼ëŠ” í™”ë©´ì„ ìœ„í•´ BlackJack2 ë³€ìˆ˜ ìƒì„±
+	// ¹æ, À¯Àú, Ã¤ÆÃÃ¢ ¸ñ·ÏÀ» º¸¿©ÁÖ´Â È­¸éÀ» À§ÇØ BlackJack2 º¯¼ö »ı¼º
 	BlackJack2 blackJack2;
-	// ì´ë¯¸ì§€ë¥¼ ìœ„í•œ icon ë³€ìˆ˜ ìƒì„±
+	// ÀÌ¹ÌÁö¸¦ À§ÇÑ icon º¯¼ö »ı¼º
 	private ImageIcon icon;
 	// private JPanel background;
 	private JButton button;
 
-	// BlackJack ë©”ì†Œë“œ ìƒì„±
+	// BlackJack ¸Ş¼Òµå »ı¼º
 	public BlackJack() {
 
-		icon = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\ë¸”ë™ì­ë°°ê²½í™”ë©´.jpg");
+		icon = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\ºí·¢Àè¹è°æÈ­¸é.jpg");
 
-		// ì œëª© ì„¤ì •
+		// Á¦¸ñ ¼³Á¤
 		setTitle("BlackJack");
 
-		// Xë²„íŠ¼ ëˆŒë €ì„ ë•Œ ë‹«íˆë„ë¡ ì„¤ì •
+		// X¹öÆ° ´­·¶À» ¶§ ´İÈ÷µµ·Ï ¼³Á¤
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		// í”„ë ˆì„ í¬ê¸° ì§€ì •
+		// ÇÁ·¹ÀÓ Å©±â ÁöÁ¤
 		setSize(1000, 650);
 
-		// JPanel ê°ì²´ ì„¤ì •
+		// JPanel °´Ã¼ ¼³Á¤
 		JPanel panel = new JPanel() {
 			public void paintComponent(Graphics g) {
 				g.drawImage(icon.getImage(), 0, 0, null);
@@ -43,43 +43,43 @@ class BlackJack extends JFrame implements ActionListener {
 				super.paintComponent(g);
 			}
 		};
-		// ì•„ì´ë”” ì…ë ¥ì„ ìœ„í•œ ê°ì²´ë“¤ ìƒì„±
-		JLabel Id = new JLabel("ì•„ì´ë”” : ");
-		Id.setFont(new Font("ë§‘ì€ê³ ë”•", Font.BOLD, 13));
+		// ¾ÆÀÌµğ ÀÔ·ÂÀ» À§ÇÑ °´Ã¼µé »ı¼º
+		JLabel Id = new JLabel("¾ÆÀÌµğ : ");
+		Id.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 13));
 		JTextField tf = new JTextField(10);
 		// background = new JPanel();
 
-		// ë°°ê²½ ì´ë¯¸ì§€ ì„¤ì •
-		// ImageIcon BackGround = new ImageIcon("C:\\Users\\user\\Desktop\\ì‚¬ì§„2.png");
+		// ¹è°æ ÀÌ¹ÌÁö ¼³Á¤
+		// ImageIcon BackGround = new ImageIcon("C:\\Users\\user\\Desktop\\»çÁø2.png");
 
-		// ë°°ì¹˜ê´€ë¦¬ìë¥¼ nullë¡œ ì„¤ì •
+		// ¹èÄ¡°ü¸®ÀÚ¸¦ null·Î ¼³Á¤
 		panel.setLayout(null);
 
-		// ë²„íŠ¼ ì´ë¯¸ì§€ ì‚½ì…
-		ImageIcon normalicon = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\ì‹œì‘ë²„íŠ¼.jpg");
-		// Jbutton ê°ì²´ ì„¤ì •
+		// ¹öÆ° ÀÌ¹ÌÁö »ğÀÔ
+		ImageIcon normalicon = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\½ÃÀÛ¹öÆ°.jpg");
+		// Jbutton °´Ã¼ ¼³Á¤
 		button = new JButton("", normalicon);
 		button.addActionListener(this);
 
-		// Panel ì¶”ê°€
+		// Panel Ãß°¡
 		panel.add(button);
 		panel.add(Id);
 		panel.add(tf);
 
-		// í”„ë ˆì„ ë³´ì´ë„ë¡ ì„¤ì •
+		// ÇÁ·¹ÀÓ º¸ÀÌµµ·Ï ¼³Á¤
 		setVisible(true);
 
-		// ë²„íŠ¼ ìœ„ì¹˜ ì„¤ì •
+		// ¹öÆ° À§Ä¡ ¼³Á¤
 		button.setBounds(470, 480, 100, 60); // b.setBounds(x, y, w, h);
 		Id.setBounds(430, 400, 150, 100);
 		tf.setBounds(480, 440, 120, 20);
 
-		// íŒ¨ë„ ì¶”ê°€
+		// ÆĞ³Î Ãß°¡
 		add(panel);
 
 	}
 
-	// ìƒˆì°½ì„ ë„ìš°ê¸° ìœ„í•´ ë©”ì†Œë“œ ìƒì„±
+	// »õÃ¢À» ¶ç¿ì±â À§ÇØ ¸Ş¼Òµå »ı¼º
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -92,9 +92,9 @@ class BlackJack extends JFrame implements ActionListener {
 
 	}
 
-	// ë°©, ìœ ì €, ì±„íŒ…ì°½ í™”ë©´ì„ ë³´ì—¬ì£¼ê¸° ìœ„í•´ BlackJack2 í´ë˜ìŠ¤ ìƒì„±
+	// ¹æ, À¯Àú, Ã¤ÆÃÃ¢ È­¸éÀ» º¸¿©ÁÖ±â À§ÇØ BlackJack2 Å¬·¡½º »ı¼º
 	class BlackJack2 extends JFrame implements ActionListener {
-		// Buttonì„ ìœ„í•œ ë³€ìˆ˜ ìƒì„± ( ë°© ëª©ë¡ ë²„íŠ¼)
+		// ButtonÀ» À§ÇÑ º¯¼ö »ı¼º ( ¹æ ¸ñ·Ï ¹öÆ°)
 		private JButton button1;
 		private JButton button2;
 		private JButton button3;
@@ -102,16 +102,16 @@ class BlackJack extends JFrame implements ActionListener {
 		private JButton button5;
 		private JButton button6;
 		
-		// Buttonì„ ìœ„í•œ ë³€ìˆ˜ ìƒì„± ( ìœ ì € ëª©ë¡ ë²„íŠ¼)
+		// ButtonÀ» À§ÇÑ º¯¼ö »ı¼º ( À¯Àú ¸ñ·Ï ¹öÆ°)
 		private JButton button7;
 		private JButton button8;
 		private JButton button9;
 		
 
-		// BlackJack2 ë©”ì†Œë“œ ìƒì„±
+		// BlackJack2 ¸Ş¼Òµå »ı¼º
 		public BlackJack2() {
 
-			// 2ë²ˆÂŠ í™”ë©´ì˜ ì œëª©ê³¼, í¬ê¸° ë“±ì„ ì„¤ì •
+			// 2¹ø¤Š È­¸éÀÇ Á¦¸ñ°ú, Å©±â µîÀ» ¼³Á¤
 			super("BlackJack");
 
 			setSize(1000, 650);
@@ -119,9 +119,9 @@ class BlackJack extends JFrame implements ActionListener {
 			setVisible(true);
 			
 
-			// 2ë²ˆÂŠ í™”ë©´ì˜ ë°°ê²½í™”ë©´ ì„¤ì •
-			icon = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\í•˜ëŠ˜.jpg");
-			// í™”ë©´ì „í™˜ì„ ìœ„í•œ JPanel ê°ì²´ ì„¤ì •
+			// 2¹ø¤Š È­¸éÀÇ ¹è°æÈ­¸é ¼³Á¤
+			icon = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\ÇÏ´Ã.jpg");
+			// È­¸éÀüÈ¯À» À§ÇÑ JPanel °´Ã¼ ¼³Á¤
 			JPanel panel = new JPanel() {
 				public void paintComponent(Graphics g) {
 					g.drawImage(icon.getImage(), 0, 0, null);
@@ -131,62 +131,62 @@ class BlackJack extends JFrame implements ActionListener {
 			};
 			panel.setLayout(null);
 			
-			button1 = new JButton("ì œëª© : ì¦ê²œí•´ìš”~~");
+			button1 = new JButton("Á¦¸ñ : Áñ°×ÇØ¿ä~~");
 			button1.setBounds(0, 0, 370, 150);
 			panel.add(button1);
 			
-			button2 = new JButton("ì§„ ì‚¬ëŒ ì»¤í”¼ ì‚¬ê¸°í•´ìš”!!");
+			button2 = new JButton("Áø »ç¶÷ Ä¿ÇÇ »ç±âÇØ¿ä!!");
 			button2.setBounds(370, 0, 370, 150);
 			panel.add(button2);
 			
-			button3 = new JButton("ë°©3");
+			button3 = new JButton("¹æ3");
 			button3.setBounds(0, 150, 370, 150);
 			panel.add(button3);
 			
-			button4 = new JButton("ë°©4");
+			button4 = new JButton("¹æ4");
 			button4.setBounds(370, 150, 370, 150);
 			panel.add(button4);
 			
-			button5 = new JButton("ë°©5");
+			button5 = new JButton("¹æ5");
 			button5.setBounds(0, 300, 370, 150);
 			panel.add(button5);
 			
-			button6 = new JButton("ë°©6");
+			button6 = new JButton("¹æ6");
 			button6.setBounds(370, 300, 370, 150);
 			panel.add(button6);
 			
-			button7 = new JButton("ìœ ì €ëª©ë¡");
+			button7 = new JButton("À¯Àú¸ñ·Ï");
 			button7.setBounds(740, 0, 240, 30);
 			button7.setBackground(Color.gray);
 			panel.add(button7);
 			
 			
 			
-			button8 = new JButton("ì •í˜•ì¼");
+			button8 = new JButton("À¯Àú¸ñ·Ï");
 			button8.setBounds(740, 30, 240, 30);
 			//button8.setBackground(Color.gray);
 			panel.add(button8);
 			
-			button9 = new JButton("ê¹€ì˜ê³¤");
+			button9 = new JButton("±è¿µ°ï");
 			button9.setBounds(740, 60, 240, 30);
 			//button9.setBackground(Color.gray);
 			panel.add(button9);
 			
 			
-			// ìœ ì €ëª©ë¡, ì±„íŒ…ì°½, ë°©ëª©ë¡ í™”ë©´ ë¶„í• ì„ ìœ„í•œ JPanel ê°ì²´ ìƒì„±
+			// À¯Àú¸ñ·Ï, Ã¤ÆÃÃ¢, ¹æ¸ñ·Ï È­¸é ºĞÇÒÀ» À§ÇÑ JPanel °´Ã¼ »ı¼º
 			JPanel userList = new JPanel();
 			JPanel catting = new JPanel();
 		
 			
-			// íŒ¨ë„ ìœ„ì¹˜ ì§€ì •
+			// ÆĞ³Î À§Ä¡ ÁöÁ¤
 			panel.setBounds(0, 0, 1000, 650);
-			// íŒ¨ë„ ìœ„ì¹˜ ì§€ì • ë° í™”ë©´ ë°°ê²½ìƒ‰ ì§€ì •
+			// ÆĞ³Î À§Ä¡ ÁöÁ¤ ¹× È­¸é ¹è°æ»ö ÁöÁ¤
 			userList.setBounds(740, 0, 260, 450);
 			userList.setBackground(Color.WHITE);
-			// íŒ¨ë„ ìœ„ì¹˜ ì§€ì • ë° í™”ë©´ ë°°ê²½ìƒ‰ ì§€ì •
+			// ÆĞ³Î À§Ä¡ ÁöÁ¤ ¹× È­¸é ¹è°æ»ö ÁöÁ¤
 			catting.setBounds(0, 450, 1000, 200);
 			catting.setBackground(Color.GRAY);
-			// ì •í™•í•œ ìœ„ì¹˜ë¥¼ ì¡ê¸° ìœ„í•œ ê°ì²´ ìƒì„±
+			// Á¤È®ÇÑ À§Ä¡¸¦ Àâ±â À§ÇÑ °´Ã¼ »ı¼º
 			Container cp = getContentPane();
 			cp.add(catting);
 			cp.add(panel);
