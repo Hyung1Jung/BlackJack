@@ -20,6 +20,7 @@ class BlackJack extends JFrame implements ActionListener {
 	private ImageIcon icon;
 	// private JPanel background;
 	private JButton button;
+	
 
 	// BlackJack 메소드 생성
 	public BlackJack() {
@@ -33,7 +34,7 @@ class BlackJack extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// 프레임 크기 지정
-		setSize(1000, 650);
+		setSize(1015, 690);
 
 		// JPanel 객체 설정
 		JPanel panel = new JPanel() {
@@ -47,8 +48,11 @@ class BlackJack extends JFrame implements ActionListener {
 		JLabel Id = new JLabel("아이디 : ");
 		Id.setFont(new Font("맑은고딕", Font.BOLD, 13));
 		JTextField tf = new JTextField(10);
-		// background = new JPanel();
+		
+		// 아이디 가져오기
+		String getId = tf.getText();
 
+		
 		// 배경 이미지 설정
 		// ImageIcon BackGround = new ImageIcon("C:\\Users\\user\\Desktop\\사진2.png");
 
@@ -94,19 +98,30 @@ class BlackJack extends JFrame implements ActionListener {
 
 	// 방, 유저, 채팅창 화면을 보여주기 위해 BlackJack2 클래스 생성
 	class BlackJack2 extends JFrame implements ActionListener {
-		// Button을 위한 변수 생성 ( 방 목록 버튼)
+
+		Room room1;
+		Hyungil hyungil;
+		// Button을 위한 변수 생성 ( 방 목록 버튼 )
 		private JButton button1;
 		private JButton button2;
 		private JButton button3;
 		private JButton button4;
 		private JButton button5;
 		private JButton button6;
-		
-		// Button을 위한 변수 생성 ( 유저 목록 버튼)
 		private JButton button7;
 		private JButton button8;
-		private JButton button9;
 		
+
+		// Button을 위한 변수 생성 ( 유저 목록 버튼 )
+		private JButton userButton1;
+		private JButton userButton2;
+		private JButton userButton3;
+		private JButton userButton4;
+		
+		// Button을 위한 변수 생성( 개발자의 한 마디 )
+		private JButton Hyungil;
+		// Button을 위한 변수 생성 ( 게임 하는 법 )
+		private JButton help;
 
 		// BlackJack2 메소드 생성
 		public BlackJack2() {
@@ -114,10 +129,9 @@ class BlackJack extends JFrame implements ActionListener {
 			// 2번쨰 화면의 제목과, 크기 등을 설정
 			super("BlackJack");
 
-			setSize(1000, 650);
+			setSize(1015, 690);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setVisible(true);
-			
 
 			// 2번쨰 화면의 배경화면 설정
 			icon = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\하늘.jpg");
@@ -130,75 +144,178 @@ class BlackJack extends JFrame implements ActionListener {
 				}
 			};
 			panel.setLayout(null);
-			
-			button1 = new JButton("제목 : 즐겜해요~~");
-			button1.setBounds(0, 0, 370, 150);
+
+			button1 = new JButton("방1");
+			button1.setBounds(0, 0, 370, 155);
 			panel.add(button1);
-			
-			button2 = new JButton("진 사람 커피 사기해요!!");
-			button2.setBounds(370, 0, 370, 150);
+			button1.addActionListener(this);
+
+			button2 = new JButton("방2");
+			button2.setBounds(370, 0, 370, 155);
 			panel.add(button2);
-			
+			button2.addActionListener(this);
+
 			button3 = new JButton("방3");
-			button3.setBounds(0, 150, 370, 150);
+			button3.setBounds(0, 155, 370, 155);
 			panel.add(button3);
-			
+			button3.addActionListener(this);
+
 			button4 = new JButton("방4");
-			button4.setBounds(370, 150, 370, 150);
+			button4.setBounds(370, 155, 370, 155);
 			panel.add(button4);
-			
+			button4.addActionListener(this);
+
 			button5 = new JButton("방5");
-			button5.setBounds(0, 300, 370, 150);
+			button5.setBounds(0, 310, 370, 155);
 			panel.add(button5);
-			
+			button5.addActionListener(this);
+
 			button6 = new JButton("방6");
-			button6.setBounds(370, 300, 370, 150);
+			button6.setBounds(370, 310, 370, 155);
 			panel.add(button6);
+			button6.addActionListener(this);
 			
-			button7 = new JButton("유저목록");
-			button7.setBounds(740, 0, 240, 30);
-			button7.setBackground(Color.gray);
+			button7 = new JButton("방7");
+			button7.setBounds(0, 465, 370, 155);
 			panel.add(button7);
+			button7.addActionListener(this);
 			
-			
-			
-			button8 = new JButton("유저목록");
-			button8.setBounds(740, 30, 240, 30);
-			//button8.setBackground(Color.gray);
+			button8 = new JButton("방8");
+			button8.setBounds(370, 465, 370, 155);
 			panel.add(button8);
+			button8.addActionListener(this);
 			
-			button9 = new JButton("김영곤");
-			button9.setBounds(740, 60, 240, 30);
-			//button9.setBackground(Color.gray);
-			panel.add(button9);
+			help = new JButton("게임 하는 법");
+			help.setBounds(0, 620, 370, 29);
+			panel.add(help);
+			help.addActionListener(this); 
 			
+			Hyungil = new JButton("개발자의 한마디");
+			Hyungil.setBounds(370, 620, 370, 29);
+			panel.add(Hyungil);
+			Hyungil.addActionListener(hyungil); 
+
+			userButton1 = new JButton("유저목록");
+			userButton1.setBounds(740, 0, 261, 30);
+			userButton1.setBackground(Color.gray);
+			panel.add(userButton1);
+
+			userButton2 = new JButton("홍길동");
+			userButton2.setBounds(740, 30, 261, 30);
+			panel.add(userButton2);
+
+			userButton3 = new JButton("김영곤");
+			userButton3.setBounds(740, 60, 261, 30);
+			panel.add(userButton3);
 			
+			userButton4 = new JButton("정형일(개발자)");
+			userButton4.setBounds(740, 90, 261, 30);
+			panel.add(userButton4);
+			
+
 			// 유저목록, 채팅창, 방목록 화면 분할을 위한 JPanel 객체 생성
 			JPanel userList = new JPanel();
 			JPanel catting = new JPanel();
-		
-			
+
 			// 패널 위치 지정
 			panel.setBounds(0, 0, 1000, 650);
 			// 패널 위치 지정 및 화면 배경색 지정
 			userList.setBounds(740, 0, 260, 450);
 			userList.setBackground(Color.WHITE);
+			/*
 			// 패널 위치 지정 및 화면 배경색 지정
 			catting.setBounds(0, 450, 1000, 200);
 			catting.setBackground(Color.GRAY);
 			// 정확한 위치를 잡기 위한 객체 생성
+			 */
 			Container cp = getContentPane();
-			cp.add(catting);
+			// cp.add(catting);
 			cp.add(panel);
 
-			
 		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			dispose();
-
+			if (room1 == null) {
+				room1 = new Room();
+			} else {
+				room1.dispose();
+				room1 = new Room();
+			}
+			if (hyungil == null) {
+				hyungil = new Hyungil();
+			} else {
+				hyungil.dispose();
+				hyungil = new Hyungil();
+			}
 		}
+		/*
+		 * @Override public void actionPerformed(ActionEvent e) { // TODO Auto-generated
+		 * method stub dispose();
+		 */
 	}
 }
+
+class Room extends JFrame implements ActionListener {
+
+	public Room() {
+
+		super("BlackJack");
+
+		setSize(1015, 690);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		
+		JPanel catting = new JPanel();
+		JPanel gameRoom = new JPanel();
+		
+		// 패널 위치 지정 및 화면 배경색 지정
+		gameRoom.setBounds(0, 0, 1000, 500);
+		gameRoom.setBackground(Color.white);
+		catting.setBounds(0, 500, 1000, 140);
+		catting.setBackground(Color.GRAY);
+		
+		Container cp = getContentPane();
+		cp.add(gameRoom);
+		cp.add(catting);
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		dispose();
+	}
+
+}
+class Hyungil extends JFrame implements ActionListener {
+
+	public Hyungil() {
+
+		super("hyungil");
+
+		setSize(1015, 690);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		
+		JPanel gameRoom = new JPanel();
+		
+		// 패널 위치 지정 및 화면 배경색 지정
+		gameRoom.setBounds(0, 0, 1000, 500);
+		gameRoom.setBackground(Color.white);
+
+		
+		Container cp = getContentPane();
+		cp.add(gameRoom);
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		dispose();
+	}
+
+}
+
