@@ -10,7 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import javax.swing.JLabel;
 
 class BlackJack extends JFrame implements ActionListener {
@@ -99,8 +98,14 @@ class BlackJack extends JFrame implements ActionListener {
 	// 방, 유저, 채팅창 화면을 보여주기 위해 BlackJack2 클래스 생성
 	class BlackJack2 extends JFrame implements ActionListener {
 
-		Room room1;
-		Hyungil hyungil;
+		private Room room1;
+		private Method method;
+		
+		ImageIcon roomImage1 = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\방1사진.jpg");
+		ImageIcon roomImage2 = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\방2사진.jpg");
+		ImageIcon roomImage3 = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\방3사진.jpg");
+		ImageIcon roomImage4 = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\방4사진.jpg");
+		
 		// Button을 위한 변수 생성 ( 방 목록 버튼 )
 		private JButton button1;
 		private JButton button2;
@@ -145,42 +150,42 @@ class BlackJack extends JFrame implements ActionListener {
 			};
 			panel.setLayout(null);
 
-			button1 = new JButton("방1");
+			button1 = new JButton("방1",roomImage1);
 			button1.setBounds(0, 0, 370, 155);
 			panel.add(button1);
 			button1.addActionListener(this);
 
-			button2 = new JButton("방2");
+			button2 = new JButton("방2",roomImage2);
 			button2.setBounds(370, 0, 370, 155);
 			panel.add(button2);
 			button2.addActionListener(this);
 
-			button3 = new JButton("방3");
+			button3 = new JButton("방3",roomImage3);
 			button3.setBounds(0, 155, 370, 155);
 			panel.add(button3);
 			button3.addActionListener(this);
 
-			button4 = new JButton("방4");
+			button4 = new JButton("방4",roomImage4);
 			button4.setBounds(370, 155, 370, 155);
 			panel.add(button4);
 			button4.addActionListener(this);
 
-			button5 = new JButton("방5");
+			button5 = new JButton("방5",roomImage1);
 			button5.setBounds(0, 310, 370, 155);
 			panel.add(button5);
 			button5.addActionListener(this);
 
-			button6 = new JButton("방6");
+			button6 = new JButton("방6",roomImage2);
 			button6.setBounds(370, 310, 370, 155);
 			panel.add(button6);
 			button6.addActionListener(this);
 			
-			button7 = new JButton("방7");
+			button7 = new JButton("방7",roomImage3);
 			button7.setBounds(0, 465, 370, 155);
 			panel.add(button7);
 			button7.addActionListener(this);
 			
-			button8 = new JButton("방8");
+			button8 = new JButton("방8",roomImage4);
 			button8.setBounds(370, 465, 370, 155);
 			panel.add(button8);
 			button8.addActionListener(this);
@@ -193,7 +198,7 @@ class BlackJack extends JFrame implements ActionListener {
 			Hyungil = new JButton("개발자의 한마디");
 			Hyungil.setBounds(370, 620, 370, 29);
 			panel.add(Hyungil);
-			Hyungil.addActionListener(hyungil); 
+			Hyungil.addActionListener(method); 
 
 			userButton1 = new JButton("유저목록");
 			userButton1.setBounds(740, 0, 261, 30);
@@ -212,7 +217,8 @@ class BlackJack extends JFrame implements ActionListener {
 			userButton4.setBounds(740, 90, 261, 30);
 			panel.add(userButton4);
 			
-
+			setVisible(true);
+			
 			// 유저목록, 채팅창, 방목록 화면 분할을 위한 JPanel 객체 생성
 			JPanel userList = new JPanel();
 			JPanel catting = new JPanel();
@@ -243,17 +249,18 @@ class BlackJack extends JFrame implements ActionListener {
 				room1.dispose();
 				room1 = new Room();
 			}
-			if (hyungil == null) {
-				hyungil = new Hyungil();
+			if (method == null) {
+				method = new Method();
 			} else {
-				hyungil.dispose();
-				hyungil = new Hyungil();
+				method.dispose();
+				method = new Method();
 			}
 		}
 		/*
 		 * @Override public void actionPerformed(ActionEvent e) { // TODO Auto-generated
 		 * method stub dispose();
 		 */
+	
 	}
 }
 
@@ -289,11 +296,14 @@ class Room extends JFrame implements ActionListener {
 	}
 
 }
-class Hyungil extends JFrame implements ActionListener {
-
-	public Hyungil() {
-
-		super("hyungil");
+class Method extends JFrame implements ActionListener {
+	
+	JPanel jp = new JPanel();
+	
+	public Method() {
+		
+		
+		super("game Method");
 
 		setSize(1015, 690);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -302,13 +312,24 @@ class Hyungil extends JFrame implements ActionListener {
 		JPanel gameRoom = new JPanel();
 		
 		// 패널 위치 지정 및 화면 배경색 지정
-		gameRoom.setBounds(0, 0, 1000, 500);
+		gameRoom.setBounds(0, 0, 1000, 750);
 		gameRoom.setBackground(Color.white);
 
 		
 		Container cp = getContentPane();
 		cp.add(gameRoom);
+		
+		JLabel jl = new JLabel("레이블");
+		jl.setFont(new Font("맑은고딕", Font.BOLD, 13));
+		jl.setBounds(430, 400, 150, 100);
+		jp.add(jl);
+		add(jp);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jp.setLayout(null);
 
+
+		
 	}
 
 	@Override
