@@ -33,7 +33,7 @@ class BlackJack extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// 프레임 크기 지정
-		setSize(1015, 690);
+		setBounds(130, 0, 1015, 690);
 
 		// JPanel 객체 설정
 		JPanel panel = new JPanel() {
@@ -100,6 +100,7 @@ class BlackJack extends JFrame implements ActionListener {
 
 		private Room room1;
 		private Method method;
+		private RoomMake roomMake;
 		
 		ImageIcon roomImage1 = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\방1사진.jpg");
 		ImageIcon roomImage2 = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\방2사진.jpg");
@@ -124,7 +125,7 @@ class BlackJack extends JFrame implements ActionListener {
 		private JButton userButton4;
 		
 		// Button을 위한 변수 생성( 개발자의 한 마디 )
-		private JButton Hyungil;
+		private JButton make;
 		// Button을 위한 변수 생성 ( 게임 하는 법 )
 		private JButton help;
 
@@ -134,7 +135,7 @@ class BlackJack extends JFrame implements ActionListener {
 			// 2번쨰 화면의 제목과, 크기 등을 설정
 			super("BlackJack");
 
-			setSize(1015, 690);
+			setBounds(130, 0, 1015, 690);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setVisible(true);
 
@@ -153,52 +154,92 @@ class BlackJack extends JFrame implements ActionListener {
 			button1 = new JButton("방1",roomImage1);
 			button1.setBounds(0, 0, 370, 155);
 			panel.add(button1);
-			button1.addActionListener(this);
+			button1.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Room();
+	            }
+	        }); 
 
 			button2 = new JButton("방2",roomImage2);
 			button2.setBounds(370, 0, 370, 155);
 			panel.add(button2);
-			button2.addActionListener(this);
+			button2.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Room();
+	            }
+	        }); 
 
 			button3 = new JButton("방3",roomImage3);
 			button3.setBounds(0, 155, 370, 155);
 			panel.add(button3);
-			button3.addActionListener(this);
+			button3.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Room();
+	            }
+	        }); 
 
 			button4 = new JButton("방4",roomImage4);
 			button4.setBounds(370, 155, 370, 155);
 			panel.add(button4);
-			button4.addActionListener(this);
+			button4.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Room();
+	            }
+	        }); 
 
 			button5 = new JButton("방5",roomImage1);
 			button5.setBounds(0, 310, 370, 155);
 			panel.add(button5);
-			button5.addActionListener(this);
+			button5.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Room();
+	            }
+	        }); 
 
 			button6 = new JButton("방6",roomImage2);
 			button6.setBounds(370, 310, 370, 155);
 			panel.add(button6);
-			button6.addActionListener(this);
+			button6.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Room();
+	            }
+	        }); 
 			
 			button7 = new JButton("방7",roomImage3);
 			button7.setBounds(0, 465, 370, 155);
 			panel.add(button7);
-			button7.addActionListener(this);
+			button7.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Room();
+	            }
+	        }); 
 			
 			button8 = new JButton("방8",roomImage4);
 			button8.setBounds(370, 465, 370, 155);
 			panel.add(button8);
-			button8.addActionListener(this);
+			button8.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Room();
+	            }
+	        }); 
 			
 			help = new JButton("게임 하는 법");
 			help.setBounds(0, 620, 370, 29);
 			panel.add(help);
-			help.addActionListener(this); 
+			help.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new Method();
+	            }
+	        }); 
 			
-			Hyungil = new JButton("개발자의 한마디");
-			Hyungil.setBounds(370, 620, 370, 29);
-			panel.add(Hyungil);
-			Hyungil.addActionListener(method); 
+			make = new JButton("방 만들기");
+			make.setBounds(370, 620, 370, 29);
+			panel.add(make);
+			make.addActionListener(new ActionListener(){
+	            public void actionPerformed(ActionEvent arg0) {
+	                new RoomMake();
+	            }
+	        });
 
 			userButton1 = new JButton("유저목록");
 			userButton1.setBounds(740, 0, 261, 30);
@@ -263,14 +304,14 @@ class BlackJack extends JFrame implements ActionListener {
 	
 	}
 }
-
+/*
 class Room extends JFrame implements ActionListener {
 
 	public Room() {
 
 		super("BlackJack");
 
-		setSize(1015, 690);
+		setBounds(130, 0, 1015, 690);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		
@@ -296,46 +337,63 @@ class Room extends JFrame implements ActionListener {
 	}
 
 }
+*/
 class Method extends JFrame implements ActionListener {
 	
-	JPanel jp = new JPanel();
 	
 	public Method() {
-		
-		
-		super("game Method");
-
-		setSize(1015, 690);
+		setTitle("game Method");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
+		setBounds(130, 0, 1015, 690);
 		
-		JPanel gameRoom = new JPanel();
+//		JPanel gameRoom = new JPanel();
+//		// 패널 위치 지정 및 화면 배경색 지정
+//		gameRoom.setBounds(0, 0, 1000, 750);
+//		gameRoom.setBackground(Color.white);
+//		Container cp = getContentPane();
+//		cp.add(gameRoom);
 		
-		// 패널 위치 지정 및 화면 배경색 지정
-		gameRoom.setBounds(0, 0, 1000, 750);
-		gameRoom.setBackground(Color.white);
-
+		ImageIcon methodImage = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\게임방법.jpg");
 		
-		Container cp = getContentPane();
-		cp.add(gameRoom);
-		
-		JLabel jl = new JLabel("레이블");
-		jl.setFont(new Font("맑은고딕", Font.BOLD, 13));
-		jl.setBounds(430, 400, 150, 100);
-		jp.add(jl);
-		add(jp);
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JPanel jp = new JPanel();
 		jp.setLayout(null);
 
-
+		JLabel jl = new JLabel(methodImage);
+		jl.setFont(new Font("맑은고딕", Font.BOLD, 13));
+		jl.setBounds(0, 0, 980, 620);
+		jp.add(jl);
 		
+		add(jp);
+		setVisible(true);
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		dispose();
+	}
+	
+}
+class RoomMake extends JFrame implements ActionListener {
+
+	public RoomMake() {
+		setTitle("RoomMake");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(500, 249, 300, 200);
+		
+		JPanel jp = new JPanel();
+		jp.setLayout(null);
+		
+		add(jp);
+		setVisible(true);
+
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		dispose();
+		
 	}
 
 }

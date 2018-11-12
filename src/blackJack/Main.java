@@ -8,7 +8,7 @@ public class Main {
 		System.out.println("Á¤ÇüÀÏ");
 
 		BlackJack blackJack = new BlackJack();
-
+		//new ChatClient().init();
 	}
 
 }
