@@ -1,33 +1,64 @@
+
 package blackJack;
 
-import java.io.*;
-import java.net.URL;
-import javax.sound.sampled.*;
-import javax.swing.*;
+import java.io.File;
+import java.io.FileInputStream;
 
-public class Mp3 extends JFrame { 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.JFrame;
+
+public class Mp3 extends JFrame {
+
+	private static Mp3 _instance;
+
+	public static Mp3 getInstance() {
+		if (_instance == null) {
+			_instance = new Mp3();
+		}
+		return _instance;
+	}
+
+	Clip clip;
+	AudioInputStream audioIn;
+	String dedefaultSoundPath = "C:/Users/user/Desktop/sample.wav";
 
 	public Mp3() {
-	      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	      this.setTitle("Test Sound Clipp");
-	      this.setSize(300, 200);
-	      this.setVisible(true);
-
-	      try {
-	         // Open an audio input stream.
-	         URL url = this.getClass().getClassLoader().getResource("C:\\Users\\user\\Desktop\\Maybe.wav");
-	         AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
-	         // Get a sound clip resource.
-	         Clip clip = AudioSystem.getClip();
-	         // Open audio clip and load samples from the audio input stream.
-	         clip.open(audioIn);
-	         clip.start();
-	      } catch (UnsupportedAudioFileException e) {
-	         e.printStackTrace();
-	      } catch (IOException e) {
-	         e.printStackTrace();
-	      } catch (LineUnavailableException e) {
-	         e.printStackTrace();
-	      }
-	   }
+		
+	
+	try{
+		File soundFile = new File(dedefaultSoundPath);
+		audioIn = AudioSystem.getAudioInputStream(soundFile);
+	}catch(Exception ex){
+		System.out.println("Error : "+ ex.getMessage());
+	}
+	
+	public AudioInputStream getAudioInputStream(){
+		return this.audioIn;
+	}
+	
+	try{	
+		clip = AudioSystem.getClip();
+		clip.open(getInstance().getAudioInputStream());
+		clip.stop();
+		}catch(Exception ex){
+			System.out.println("Error : "+ ex.getMessage());
+		}
+	
+	
+	}
+	private AudioInputStream getAudioInputStream() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void startGame(){
+		clip.loop(Clip.LOOP_CONTINUOUSLY);
+		clip.start();	
+	}
+	public void gameReset(){
+		if(this.clip.isRunning()){
+			this.clip.stop();
+		}
+	}
 }

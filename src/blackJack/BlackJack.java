@@ -48,9 +48,11 @@ class BlackJack extends JFrame implements ActionListener {
 			}
 		};
 		// 아이디 입력을 위한 객체들 생성
-		JLabel Id = new JLabel("아이디 : ");
-		Id.setFont(new Font("맑은고딕", Font.BOLD, 13));
+		JLabel Id = new JLabel("IP 입력 : ");
+		Id.setFont(new Font("맑은고딕", Font.BOLD, 28));
+		Id.setForeground(Color.black);
 		JTextField tf = new JTextField(10);
+		tf.setFont(new Font("맑은고딕", Font.BOLD, 28));
 		
 		// 아이디 가져오기
 		String getId = tf.getText();
@@ -78,8 +80,8 @@ class BlackJack extends JFrame implements ActionListener {
 
 		// 버튼 위치 설정
 		button.setBounds(470, 480, 100, 60); // b.setBounds(x, y, w, h);
-		Id.setBounds(430, 400, 150, 100);
-		tf.setBounds(480, 440, 120, 20);
+		Id.setBounds(385, 350, 250, 200);
+		tf.setBounds(505, 430, 160, 35);
 
 		// 패널 추가
 		add(panel);
