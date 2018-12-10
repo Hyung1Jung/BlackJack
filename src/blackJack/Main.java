@@ -7,8 +7,9 @@ public class Main {
 
 		System.out.println("Á¤ÇüÀÏ");
 		
-		Mp3 mp3 = new Mp3();
+		//Mp3 mp3 = new Mp3();
 		BlackJack blackJack = new BlackJack();
+		new ChatClient().init();
 	}
 
 }

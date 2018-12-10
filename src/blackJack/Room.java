@@ -35,7 +35,13 @@ class Room extends JFrame implements ActionListener {
 		Container cp = getContentPane();
 		cp.add(gameRoom);
 		cp.add(catting);
-
+		
+		catting.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+            	new ChatClient().init();
+            }
+        }); 
+		 
 	}
 
 	@Override

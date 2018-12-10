@@ -32,7 +32,7 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
         this.add("South", p);
 
         // Frame
-        setBounds(400, 80, 300, 300);
+        setBounds(996, 0, 288, 686);
         setTitle("√§∆√√¢");
         setVisible(true);
         // setDefaultCloseOperation(EXIT_ON_CLOSE);

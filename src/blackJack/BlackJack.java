@@ -37,7 +37,7 @@ class BlackJack extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// 프레임 크기 지정
-		setBounds(130, 0, 1015, 690);
+		setBounds(-6, 0, 1015, 690);
 
 		// JPanel 객체 설정
 		JPanel panel = new JPanel() {
@@ -141,7 +141,7 @@ class BlackJack extends JFrame implements ActionListener {
 			// 2번쨰 화면의 제목과, 크기 등을 설정
 			super("BlackJack");
 
-			setBounds(130, 0, 1015, 690);
+			setBounds(0, 0, 1015, 690);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setVisible(true);
 
