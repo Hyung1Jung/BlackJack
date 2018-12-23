@@ -21,7 +21,7 @@ class Room extends JFrame implements ActionListener {
 		setBounds(130, 0, 1015, 690);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
-
+		
 		JPanel catting = new JPanel();
 		JPanel gameRoom = new JPanel();
 
@@ -36,13 +36,7 @@ class Room extends JFrame implements ActionListener {
 		cp.add(gameRoom);
 		cp.add(catting);
 		
-		catting.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent arg0) {
-            	new ChatClient().init();
-            }
-        }); 
-		 
-	}
+		}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
