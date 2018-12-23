@@ -15,15 +15,15 @@ import javax.swing.JLabel;
 class Room extends JFrame implements ActionListener {
 
 	public Room() {
-
+		
 		super("BlackJack");
 
 		setBounds(130, 0, 1015, 690);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		
-		JPanel catting = new JPanel();
 		JPanel gameRoom = new JPanel();
+		JPanel catting = new JPanel();
 
 		// 패널 위치 지정 및 화면 배경색 지정
 		gameRoom.setBounds(0, 0, 1000, 500);

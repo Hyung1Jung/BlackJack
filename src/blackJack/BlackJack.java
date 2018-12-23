@@ -382,17 +382,41 @@ class Method extends JFrame implements ActionListener {
 	
 }
 class RoomMake extends JFrame implements ActionListener {
-
+	
+	
+	ImageIcon roomImage1 = new ImageIcon("C:\\Users\\user\\eclipse-workspace\\BlackJack\\πÊ1ªÁ¡¯.jpg");
+	
 	public RoomMake() {
 		setTitle("RoomMake");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 249, 300, 200);
 		
-		JPanel jp = new JPanel();
+		JPanel jp = new JPanel() {
+			public void paintComponent(Graphics g) {
+				g.drawImage(roomImage1.getImage(), 0, 0, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		
 		jp.setLayout(null);
 		
 		add(jp);
 		setVisible(true);
+		
+		JLabel roomId = new JLabel("πÊ¡¶∏Ò: ");
+		roomId.setFont(new Font("∏º¿∫∞ÌµÒ", Font.BOLD, 15));
+		roomId.setForeground(Color.black);
+		JTextField tf = new JTextField(10);
+		tf.setFont(new Font("∏º¿∫∞ÌµÒ", Font.BOLD, 13));
+		
+		jp.add(roomId);
+		jp.add(tf);
+		
+		
+		roomId.setBounds(35, 60, 60, 50);
+		tf.setBounds(100, 73, 140, 25);
+
 
 	}
 	@Override
